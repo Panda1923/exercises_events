@@ -11,3 +11,5 @@ function calculateBMI() {
         alert('Por favor, introduce tanto la estatura como el peso.');
     }
 }
+
+
