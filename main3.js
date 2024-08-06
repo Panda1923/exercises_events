@@ -1,7 +1,7 @@
 // 1
-let notas = [{id: '1', titulo: 'paso uno en mi dia',texto:'planificar las cosas del dia', realizada: false},
-    {id: '2', titulo: 'paso dos',texto:'se realiza el desayuno', realizada: true}
-]
+let notas = [{id: 1, titulo: 'paso uno en mi dia',texto:'planificar las cosas del dia', realizada: false},
+    {id: 2, titulo: 'paso dos',texto:'se realiza el desayuno', realizada: true}
+];
 
 // 2
 let idGlobal = 2;
