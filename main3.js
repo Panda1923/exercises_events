@@ -1,12 +1,11 @@
-// Array para guardar las notas
-let notas = [
-    
+// 1
+let notas = [{id: '1', titulo: 'paso uno en mi dia',texto:'planificar las cosas del dia', realizada: false},
+    {id: '2', titulo: 'paso dos',texto:'se realiza el desayuno', realizada: true}
 ]
 
-// Variable para el control del id
+// 2
 let idGlobal = 2;
 
-// Función para pintar las notas
 function pintarNotas() {
     const contenedor = document.getElementById('contenedorNotas');
     contenedor.innerHTML = '';
@@ -33,7 +32,6 @@ function pintarNotas() {
     });
 }
 
-// Función para agregar una nueva nota
 function agregarNota(titulo, texto) {
     idGlobal++;
     const nuevaNota = { id: idGlobal, titulo, texto, realizada: false };
@@ -41,13 +39,11 @@ function agregarNota(titulo, texto) {
     pintarNotas();
 }
 
-// Función para borrar una nota
 function borrarNota(id) {
     notas = notas.filter(nota => nota.id !== id);
     pintarNotas();
 }
 
-// Función para marcar una nota como realizada
 function marcarRealizada(id) {
     const nota = notas.find(nota => nota.id === id);
     if (nota) {
@@ -56,17 +52,14 @@ function marcarRealizada(id) {
     pintarNotas();
 }
 
-// Función para filtrar notas por texto
 function filtrarPorTexto(array, texto) {
     return texto ? array.filter(nota => nota.titulo.includes(texto) || nota.texto.includes(texto)) : array;
 }
 
-// Función para filtrar notas por estado
 function filtrarPorEstado(array) {
     return array.filter(nota => nota.realizada);
 }
 
-// Función para actualizar la lista de notas filtradas
 function actualizarNotasFiltradas() {
     let notasFiltradas = [...notas];
 
@@ -81,7 +74,6 @@ function actualizarNotasFiltradas() {
     pintarNotasFiltradas(notasFiltradas);
 }
 
-// Función para pintar las notas filtradas
 function pintarNotasFiltradas(notasFiltradas) {
     const contenedor = document.getElementById('contenedorNotas');
     contenedor.innerHTML = '';
@@ -108,7 +100,6 @@ function pintarNotasFiltradas(notasFiltradas) {
     });
 }
 
-// Event listeners para los botones y filtros
 document.getElementById('guardar').addEventListener('click', () => {
     const titulo = document.getElementById('titulo').value;
     const texto = document.getElementById('texto').value;
@@ -130,5 +121,5 @@ document.getElementById('limpiar').addEventListener('click', () => {
 document.getElementById('buscar').addEventListener('input', actualizarNotasFiltradas);
 document.getElementById('filtroRealizadas').addEventListener('change', actualizarNotasFiltradas);
 
-// Pintar notas iniciales
+
 pintarNotas();
